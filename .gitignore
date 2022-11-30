@@ -2,3 +2,8 @@
 .log
 .out
 .gz
+.bbl
+.blg
+.nav
+.snm
+.toc
