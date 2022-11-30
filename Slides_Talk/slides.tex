@@ -1,0 +1,180 @@
+%% Begin slides template file
+\documentclass[11pt,t,usepdftitle=false,aspectratio=169]{beamer}
+%% ------------------------------------------------------------------
+%% - aspectratio=43: Set paper aspect ratio to 4:3.
+%% - aspectratio=169: Set paper aspect ratio to 16:9.
+%% ------------------------------------------------------------------
+
+\usetheme[nototalframenumber,foot,logo]{uibk}
+\usepackage{todonotes}
+\usepackage{hyperref}
+\presetkeys{todonotes}{inline}{}
+
+
+\newcommand{\Kristina}[1]{\textcolor{violet}{\textbf{\textit{<#1>}}}}
+%% ------------------------------------------------------------------
+%% - foot: Add a footer line for conference name and date.
+%% - logo: Add the university logo in the footer (only if 'foot' set).
+%% - bigfoot/sasquatch: Larger font size in footer.
+%% - nototalslidenumber: Hide the total number of slides (only if 'foot' set)
+%% - license: Add CC-BY license symbol to title slide (e.g., for conference uploads)
+%%   (TODO: At the moment no other licenses are supported.)
+%% - licenseall: Add CC-BY license symbol to all subsequent slides slides
+%% - url: use \url{} rather than \href{} on the title page
+%% - nosectiontitlepage: switches off the behaviour of inserting the
+%%   titlepage every time a \section is called. This makes it possible to
+%%   use more than one section + thanks page and a ToC off by default.
+%%   If the 'nosectiontitlepage' is set you can create UIBK title slides
+%%   using the command '\uibktitlepage{}' in your document to create
+%%   one or multiple title slides.
+%% ------------------------------------------------------------------
+
+%% ------------------------------------------------------------------
+%% The official corporate colors of the university are predefined and
+%% can be used for e.g., highlighting something. Simply use
+%% \color{uibkorange} or \begin{color}{uibkorange} ... \end{color}
+%% Defined colors are:
+%% - uibkblue, uibkbluel, uibkorange, uibkorangel, uibkgray, uibkgraym, uibkgrayl
+%% The frametitle color can be easily adjusted e.g., to black with
+%% \setbeamercolor{titlelike}{fg=black}
+%% ------------------------------------------------------------------
+
+%\setbeamercolor{verbcolor}{fg=uibkorange}
+%% ------------------------------------------------------------------
+%% Setting a highlight color for verbatim output such as from
+%% the commands \pkg, \email, \file, \dataset 
+%% ------------------------------------------------------------------
+
+
+%% information for the title page ('short title' is the pdf-title that is shown in viewer's titlebar)
+%% information for the title page ('short title' is the pdf-title that is shown in viewer's titlebar)
+\title{Learn to Love {\LaTeX}}
+
+\author{Kristina Magnussen}
+%('short author' is the pdf-metadata Author)
+%% If multiple authors are required and the font size is too large you
+%% can overrule the font size of author and url by calling:
+%\setbeamerfont{author}{size*={10pt}{10pt},series=\mdseries}
+%\setbeamerfont{url}{size*={10pt}{10pt},series=\mdseries}
+%\URL{}
+%\subtitle{}
+
+\footertext{{\LaTeX} beamer theme}
+\date{2017-07-25}
+
+\headerimage{3}
+%% ------------------------------------------------------------------
+%% The theme offers four different header images based on the
+%% corporate design of the university of innsbruck. Currently
+%% 1, 2, 3 and 4 is allowed as input to \headerimage{...}. Default
+%% or fallback is '1'.
+%% ------------------------------------------------------------------
+
+\begin{document}
+	
+	%% ALTERNATIVE TITLEPAGE
+	%% The next block is how you add a titlepage with the 'nosectiontitlepage' option, which switches off
+	%% the default behavior of creating a titlepage every time a \section{} is defined.
+	%% Then you can use \section{} as it's originally intended, including a table of contents.
+	% \usebackgroundtemplate{\includegraphics[width=\paperwidth,height=\paperheight]{titlebackground.pdf}}
+	% \begin{frame}[plain]
+		%     \titlepage
+		% \end{frame}
+	% \addtocounter{framenumber}{-1}
+	% \usebackgroundtemplate{}}
+
+%% Table of Contents, if wanted:
+%% this requires the 'nosectiontitlepage' option and setting \section{}'s as you want them to appear here.
+%% Subsections and subordinates are suppressed in the .sty at the moment, search
+%% for \setbeamertemplate{subsection} and replace the empty {} with whatever you want.
+%% Although it's probably too much for a presentation, maybe for a lecture.
+% \begin{frame}
+	%     \vspace*{1cm plus 1fil}
+	%     \tableofcontents
+	%     \vspace*{0cm plus 1fil}
+	% \end{frame}
+
+
+%% this sets the first PDF bookmark and triggers generation of the title page
+\section{Bookmark Title}
+
+%% this just generates PDF bookmarks
+
+%% first slide
+
+\begin{frame}{What is LaTeX?}
+	\begin{itemize}
+		\item LaTeX is a system for typesetting
+		\item The goal is for authors to focus less on design and more on content
+		\item Very well suited for large documents and scientific work
+		\item Helpful when representing mathematical formulas
+		\item Can be used for slides, papers, posters etc. 
+	\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}{What I've Learned}
+	\begin{itemize}
+		\item Reuse reuse reuse $\rightarrow$ Recycle your own code and all the code you can get from other people 
+		\item Error messages are often useless \\
+		$\rightarrow$ Compile often and try to retrace your steps 
+		\item Small commands, e.g. write a \textasciitilde{} before \texttt{\textbackslash{}ref} and \texttt{\textbackslash{}cite} to avoid line breaks 
+		\item When including images, use pdf instead of png, jpeg etc. for better quality 
+	\end{itemize}
+	
+\end{frame}
+
+
+\begin{frame}{The todonotes packages}
+	Include: \texttt{\textbackslash{}usepackage\{todonotes\}} \\
+	When using the beamer package, you also need this line: \\
+	\texttt{\textbackslash{}presetkeys\{todonotes\}\{inline\}\{\}}
+	\todo{TODO: Finish this slide}
+	\missingfigure{Insert a nice picture here}
+	
+\end{frame}
+
+
+
+\begin{frame}{Custom Commands}
+	LaTeX allows you to define custom commands, this can be useful if there is e.g. a sequence of text you will be repeating several times. \\ \medskip 
+	\textbf{Example:} \\ \texttt{\textbackslash{}newcommand\{\textbackslash{}Kristina\}[1]\{\textbackslash{}textcolor\{violet\}\{\textbackslash{}textbf\{\textbackslash{}textit\textbackslash{}\{<\#1>\}\}\}\}} \\  \medskip
+	
+	\textbf{Usage:} \\
+	\texttt{\textbackslash{}Kristina}\{My custom comment\} \\ \medskip
+	
+	\textbf{Result:} \\ 
+	\Kristina{My custom comment}
+\end{frame}
+
+
+\begin{frame}{Tools}
+	\begin{itemize}
+		\item Editors, e.g. Overleaf (useful for collaboration), TeXstudio etc. 
+		\item Mathpix: converts handwritten formulas to LaTeX code \url{https://mathpix.com/image-to-latex}
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Resources}
+	\begin{itemize}
+		\item \href{https://blog.martisak.se/2020/05/03/top-ten-latex-packages/}{Interesting LaTeX packages}
+     \item \href{https://www.hmc.edu/mathematics/wp-content/uploads/sites/49/2019/06/latex-hints.pdf}{Latex hints} \\ 
+	\item \href{https://guides.lib.chalmers.se/overleaf_latex/tools}{Cheatsheets and tools for Overleaf}
+	\item \href{https://typeset.io/resources/the-only-latex-editor-guide-you-will-need/}{Latex editor guide} \\
+	\item \href{https://waterprogramming.wordpress.com/2021/10/05/make-latex-easier-with-custom-commands/}{How to define custom commands}
+	\item \href{https://git.uibk.ac.at/uibklatex/beamer\_letter}{UIBK LaTeX templates} \\ \textbf{$\rightarrow$ Download from the git and not the university website!}
+\end{itemize}
+\end{frame}
+
+
+
+
+%% to show a last slide similar to the title slide: information for the last page
+\title{Thank you for your attention!}
+\subtitle{}
+\section{Thanks}
+
+\end{document}
+
